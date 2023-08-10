@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
+
+.gradient-change-0 {
+  width: 320px;
+  height: 120px;
+  background: linear-gradient(90deg, #ff8a36, #802ede);
+  background-size: 200%, 100%;
+  animation: color-move 3s infinite linear alternate;
+  background-position: 0 0;
+}
+@keyframes color-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.gradient-change-1 {
+  position: relative;
+  margin: 200px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    animation: color-move-1 6s infinite linear;
+    background: linear-gradient(30deg, #ff8a36, #802ede, #21e1ff);
+  }
+}
+
+@keyframes color-move-1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0, -66%);
+  }
+  50% {
+    transform: translate(-66%, -66%);
+  }
+  75% {
+    transform: translate(-66%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.gradient-change-2 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(30deg, #ff8a36, #802ede, #21e1ff);
+  animation: color-move-2 6s infinite linear;
+}
+@keyframes color-move-2 {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@property --colorA {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: "#ff8a36";
+}
+@property --colorC {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: "#802ede";
+}
+@property --colorF {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: "#21e1ff";
+}
+.gradient-change-3 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    30deg,
+    var(--colorA),
+    var(--colorC),
+    var(--colorF)
+  );
+  animation: color-move-3 3s infinite linear;
+}
+@keyframes color-move-3 {
+  20% {
+    --colorA: #ff8a36;
+    --colorC: #802ede;
+    --colorF: #21e1ff;
+  }
+  50% {
+    --colorA: #ffde36;
+    --colorC: #c12ede;
+    --colorF: #21b9ff;
+  }
+  100% {
+    --colorA: #8dff36;
+    --colorC: #de2e63;
+    --colorF: #2821ff;
+  }
+}
+
+.clip-test-container {
+  display: flex;
+  & > div {
+    margin: 5px;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 5px dashed #21b9ff;
+    background-color: #000;
+    padding: 5px;
+  }
+}
+.clip-border {
+  background-clip: border-box;
+}
+.clip-padding {
+  background-clip: padding-box;
+}
+.clip-content {
+  background-clip: content-box;
+}
+
+.dash-border {
+  width: 100px;
+  height: 100px;
+  border: 5px dashed #21b9ff;
+  // 前面覆盖后面的，使用渐变代替背景图片
+  background: linear-gradient(#fff, #fff), linear-gradient(#8dff36, #8dff36);
+  background-clip: padding-box, border-box;
+}
+
+.clip-text {
+  display: inline-block;
+  font-size: 30px;
+  padding: 20px;
+  color: transparent;
+  background: linear-gradient(90deg, #ff8a36, #21e1ff);
+  background-clip: text;
+}
+
+.complex-clip-text {
+  font-family: "Borel", cursive;
+  font-weight: 900;
+
+  display: inline-block;
+  font-size: 30px;
+  padding: 20px;
+  color: transparent;
+  background: linear-gradient(125deg, transparent, transparent 5px, #fff9 60px, transparent 30px, transparent 60px, #fff9 90px, transparent 100px, transparent), linear-gradient(90deg, #ff8a36, #21e1ff);
+  background-position: 0 0, 0 0;
+  background-size: 200%;
+  animation: clip-text-animate 5s linear infinite;
+  // background: linear-gradient(90deg, #ff8a36, #21e1ff);
+  background-clip: text;
+}
+
+@keyframes clip-text-animate {
+  0% {
+    background-position: 0 0,0 0;
+  }
+  100% {
+    background-position: -100% 0, 0 0;
+  }
+}

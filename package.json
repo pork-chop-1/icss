@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "axios": "^1.4.0",
+    "postcss-preset-env": "^9.1.1",
     "sass": "^1.64.2",
     "tunnel": "^0.0.6",
     "vite": "^4.3.9"
