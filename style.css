@@ -1,0 +1,11 @@
+.left-nav {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  width: 16rem;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto 5rem;
+}
