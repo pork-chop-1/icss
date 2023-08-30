@@ -161,7 +161,18 @@
   font-size: 30px;
   padding: 20px;
   color: transparent;
-  background: linear-gradient(125deg, transparent, transparent 5px, #fff9 60px, transparent 30px, transparent 60px, #fff9 90px, transparent 100px, transparent), linear-gradient(90deg, #ff8a36, #21e1ff);
+  background: linear-gradient(
+      125deg,
+      transparent,
+      transparent 5px,
+      #fff9 60px,
+      transparent 30px,
+      transparent 60px,
+      #fff9 90px,
+      transparent 100px,
+      transparent
+    ),
+    linear-gradient(90deg, #ff8a36, #21e1ff);
   background-position: 0 0, 0 0;
   background-size: 200%;
   animation: clip-text-animate 5s linear infinite;
@@ -171,9 +182,64 @@
 
 @keyframes clip-text-animate {
   0% {
-    background-position: 0 0,0 0;
+    background-position: 0 0, 0 0;
   }
   100% {
     background-position: -100% 0, 0 0;
+  }
+}
+
+.gradient-inline-wrapper {
+  max-width: 200px;
+  .gradient-inline {
+    background: linear-gradient(90deg, #ff8a36, #802ede);
+    background-size: 0 100%;
+    transition: 1s all linear;
+    background-repeat: no-repeat;
+  }
+
+  &:hover .gradient-inline {
+    background-size: 100% 100%;
+  }
+}
+
+.attachment {
+  width: 413px;
+  height: 500px;
+  overflow: auto;
+
+  > div {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-shadow: 1px 3px 5px gray;
+    font-size: 40px;
+
+    &:first-child {
+      background-image: url("/ringworld.jpg");
+    }
+    &:nth-child(2) {
+      background-image: url("/ringworld2.jpg");
+    }
+    &:nth-child(3) {
+      background-image: url("/ringworld3.jpg");
+    }
+  }
+}
+
+.shadow-wrapper {
+  width: 300px;
+  height: 300px;
+  overflow: auto;
+  background: linear-gradient(#fff 40px, transparent 200px) top/100% 205px, linear-gradient(gray, transparent 40px) top/100% 100px;
+  background-repeat: no-repeat;
+  background-attachment: local, scroll;
+  .shadow-item {
+    height: 700px;
   }
 }

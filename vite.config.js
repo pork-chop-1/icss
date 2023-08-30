@@ -3,11 +3,11 @@ import postcss from 'postcss-preset-env'
 
 export default defineConfig({
   build: {
-    lib: {
-      entry: './lib/main.js',
-      name: 'Counter',
-      fileName: 'counter'
-    }
+    // lib: {
+    //   entry: './index.js',
+    //   name: 'Counter',
+    //   fileName: 'counter'
+    // }
   },
   css: {
     postcss: {

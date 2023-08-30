@@ -1,0 +1,136 @@
+.mask-1 {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  background-image: url("/ringworld2.jpg");
+  background-size: cover;
+
+  .inner {
+    position: absolute;
+    inset: 0;
+    background-image: url("/ringworld3.jpg");
+    background-size: cover;
+    mask: linear-gradient(0turn, #fff 50%, transparent 50%);
+    mask-position: 0px 0px;
+    mask-size: 100% 200%;
+    mask-repeat: no-repeat;
+    animation: 4s mask-move-1 linear infinite alternate;
+  }
+}
+
+@keyframes mask-move-1 {
+  0% {
+    mask-position: 0% 0%;
+    // height: 0px;
+  }
+  100% {
+    mask-position: 0% 100%;
+    // height: 1000px;
+  }
+}
+
+.mask-2 {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  background-image: url("/ringworld2.jpg");
+  background-size: cover;
+
+  .inner {
+    position: absolute;
+    inset: 0;
+    background-image: url("/ringworld3.jpg");
+    background-size: cover;
+    mask: linear-gradient(0turn, #fff 50%, transparent 50%);
+    mask-position: 0px 0px;
+    mask-size: 100% 200%;
+    mask-repeat: no-repeat;
+    animation: 4s mask-move-2 linear infinite alternate;
+  }
+}
+
+@keyframes mask-move-2 {
+  @for $i from 0 through 100 {
+    #{$i + "%"} {
+      mask: linear-gradient(
+        45deg,
+        #000 #{$i + "%"},
+        transparent #{$i + 5 + "%"},
+        transparent 1%
+      );
+    }
+  }
+}
+
+.mask-3 {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  background-image: url("/ringworld2.jpg");
+  background-size: cover;
+
+  .inner {
+    content: " ";
+    position: absolute;
+    inset: 0;
+    background-image: url("/ringworld3.jpg");
+    background-size: cover;
+    mask: linear-gradient(0turn, #fff 50%, transparent 50%);
+    mask-position: 0px 0px;
+    mask-size: 100% 200%;
+    mask-repeat: no-repeat;
+    animation: 4s mask-move-3 linear infinite;
+  }
+}
+@keyframes mask-move-3 {
+  @for $i from 0 through 99 {
+    #{$i + "%"} {
+      mask: conic-gradient(
+        from 0,
+        #fff 0% #{$i + "%"},
+        transparent #{$i + 5 + "%"} 100%
+      );
+    }
+  }
+}
+
+@property --per {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: -10%;
+}
+
+.mask-4 {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: url(https://picsum.photos/400/400?random=5) no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(https://picsum.photos/400/400?random=100) no-repeat;
+    mask: conic-gradient(
+      #000 0,
+      #000 var(--per),
+      transparent calc(var(--per) + 10%),
+      transparent
+    );
+    z-index: 1;
+    animation: 1.2s mask-move-34 ease-in forwards;
+  }
+}
+
+@keyframes mask-move-34 {
+  0% {
+    --per: -10%;
+    left: 20px;
+  }
+  100% {
+    --per: 100%;
+  }
+}

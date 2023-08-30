@@ -7,7 +7,7 @@
     "dist",
     "index.d.ts"
   ],
-  "main": "./dist/counter.umd.cjs",
+  "main": "./index.js",
   "module": "./dist/counter.js",
   "types": "./index.d.ts",
   "exports": {

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>使用mask对内容进行剪裁</h2>
+  <div>
+    <div class="mask-1"></div>
+    <div class="mask-2"></div>
+  </div>
+  <h2>融合</h2>
+  <div>
+    <label for="mask-3-loc">loc: </label><input type="range" id="mask-3-loc" name="mask-3-loc" min="0" max="100" />
+    <div class="mask-3">
+      <div class="inner"></div>
+    </div>
+  </div>
+  <h2>融合方式</h2>
+  <div>
+    chrome:
+    <label><input type="radio" name="mask-4" value="clear"> clear </label>
+    <label><input type="radio" name="mask-4" value="copy"> copy </label>
+    <label><input type="radio" name="mask-4" value="source-over"> source-over </label>
+    <label><input type="radio" name="mask-4" value="source-in"> source-in </label>
+    <label><input type="radio" name="mask-4" value="source-out"> source-out </label>
+    <label><input type="radio" name="mask-4" value="source-atop"> source-atop </label>
+    <label><input type="radio" name="mask-4" value="destination-over"> destination-over </label>
+    <label><input type="radio" name="mask-4" value="destination-in"> destination-in </label>
+    <label><input type="radio" name="mask-4" value="destination-out"> destination-out </label>
+    <label><input type="radio" name="mask-4" value="destination-atop"> destination-atop </label>
+    <label><input type="radio" name="mask-4" value="xor"> xor </label>
+    <br>
+    firefox:
+    <label><input type="radio" name="mask-4" value="add"> add </label>
+    <label><input type="radio" name="mask-4" value="subtract"> subtract</label>
+    <label><input type="radio" name="mask-4" value="intersect">intersect</label>
+    <label><input type="radio" name="mask-4" value="exclude">exclude</label>
+    <div class="mask-4">
+    </div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

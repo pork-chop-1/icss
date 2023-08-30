@@ -1,0 +1,53 @@
+.mask-1 {
+  width: 200px;
+  height: 300px;
+  background-image: url("/ringworld.jpg");
+  background-size: cover;
+  background-position: bottom;
+  mask: linear-gradient(90deg, transparent, #fff);
+}
+
+.mask-2 {
+  width: 200px;
+  height: 300px;
+  background-image: url("/ringworld.jpg");
+  background-size: cover;
+  background-position: bottom;
+  mask: linear-gradient(45deg, transparent 30px, #fff 30px),
+    linear-gradient(135deg, transparent 30px, #fff 30px),
+    linear-gradient(225deg, transparent 30px, #fff 30px),
+    linear-gradient(315deg, transparent 30px, #fff 30px);
+  mask-repeat: no-repeat;
+  mask-size: 50% 50%;
+  mask-position: left bottom, left top, right top, right bottom;
+}
+
+.mask-3 {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  background-image: url("/ringworld2.jpg");
+  background-size: cover;
+
+  .inner {
+    content: " ";
+    position: absolute;
+    inset: 0;
+    background-image: url("/ringworld3.jpg");
+    background-size: cover;
+    mask: linear-gradient(30deg, #fff 50%, transparent 50%);
+    mask-position: 50% 50%;
+    mask-size: 400% 100%;
+    mask-repeat: no-repeat;
+  }
+}
+
+.mask-4 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(90deg, #ff8a36, #802ede);
+  mask: radial-gradient(circle at 100px 100px, #fff6 50px, transparent 50px),
+    radial-gradient(circle at 170px 100px, #fff6 50px, transparent 50px);
+  mask-repeat: no-repeat;
+}
